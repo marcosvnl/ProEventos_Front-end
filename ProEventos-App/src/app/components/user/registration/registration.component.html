@@ -67,7 +67,7 @@
           <div *ngIf="f.senha.hasError('required')" class="invalid-feedback">
             Senha é obrigatório.
           </div>
-          <div *ngIf="f.senha.hasError('minLength')" class="invalid-feedback">
+          <div *ngIf="f.senha.errors?.minLength" class="invalid-feedback">
             Mínimo de 6 caracteres.
           </div>
         </div>
@@ -79,6 +79,9 @@
           />
           <div *ngIf="f.confirSenha.hasError('required')" class="invalid-feedback">
             Confirme a senha.
+          </div>
+          <div *ngIf="f.confirSenha.errors?.mustMatch" class="invalid-feedback">
+            confir. senha não corresponde a senha.
           </div>
         </div>
       </div>
