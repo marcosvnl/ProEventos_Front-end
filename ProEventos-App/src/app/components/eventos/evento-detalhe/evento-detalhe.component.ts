@@ -32,6 +32,10 @@ export class EventoDetalheComponent implements OnInit {
     });
   }
 
+  public cssValidator(formComtrol : FormControl): any {
+    return { 'is-invalid': formComtrol.errors && formComtrol.touched }
+  }
+
   public cleanValues(): void {
     this.form.reset();
   }
